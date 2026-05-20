@@ -35,11 +35,22 @@ It includes:
 ---
 ## Router 
 ### R1
-- Router-on-a-stick for VLANs 10, 20, 30 (subinterfaces .10, .20, .30)
-- Trunk link to SW-1 carrying VLANs 10, 20, 30,
-- DHCP snooping and Dynamic ARP Inspection (DAI) configured
-- SSH v2 enabled for management
+ - Router-on-a-stick for VLANs 10, 20, 30 (subinterfaces .10, .20, .30)
+ - Trunk link to SW-1 carrying VLANs 10, 20, 30,
+ - DHCP snooping and Dynamic ARP Inspection (DAI) configured
+ - SSH v2 enabled for management
 
+## Switch
+### SW-1 (VTP server)
+ - Trunk to R1, access/trunks to downstream switches
+ - VLANs: 10 (HR), 20 (DEV), 30 (SERVERS)
+### SW-2 (HR,DEV)
+ - Access ports assigned to VLAN 10,20(HR,DEV PCs)
+### SW-3 (DEV)
+ - Access ports assigned to VLAN 10,20 (DEV,HR PCs)
+
+### SW-4 (SERVER)
+ - Access port in VLAN 30 hosting SERVER
 ---
 
 ## 🌐 VLAN and IP Addressing
